@@ -4,14 +4,14 @@
 const translations = {
     en: {
         title: "Pardis Nasimian | Personal Portfolio",
-        badgeIntern: "Available for Internship",
         heroName: "Pardis Nasimian",
         heroTitle: "Computer Engineering Student",
         heroSubtitle: "Front-End Developer • WordPress Developer",
-        heroDesc: "Computer Engineering student with hands-on experience in developing corporate and e-commerce websites. Skilled in WordPress, HTML, CSS, JavaScript and familiar with PHP. Passionate about Front-End Development, UI Design and modern web technologies.",
+        heroDesc: "Computer Engineering student with hands-on experience in developing corporate and e-commerce websites. Skilled in WordPress, HTML, CSS, JavaScript and familiar with PHP. Passionate about Front-End Development, UI Design and modern web technologies",
         titleAbout: "About Me",
-        aboutText: "Computer Engineering student with hands-on experience in developing corporate and e-commerce websites. Passionate about Front-End development, UI design, and modern web technologies.",
+        aboutText: "Computer Engineering student with hands-on experience in developing corporate and e-commerce websites. Passionate about Front-End development, UI design, and modern web technologies",
         titleSkills: "Skills",
+        skillPhp: "Introductory PHP",
         skillResponsive: "Responsive Design",
         skillSeo: "SEO Basics",
         skillMarketing: "Digital Marketing Basics",
@@ -32,36 +32,28 @@ const translations = {
         exp4_role: "HTML Instructor",
         exp4_company: "Alton Institute",
         titleProjects: "Projects",
-        proj_saraye_desc: "E-commerce website designed and developed for product distribution and commercial sales platforms.",
-        proj_bohlul_desc: "Corporate web representation detailing industrial pump machinery catalogs and utility services.",
-        proj_dr_desc: "Medical and pharmaceutical online catalog system developed for user product checking and distribution.",
-        proj_mohtava_desc: "Corporate portal highlighting specialized digital marketing frameworks, design portfolios and strategic SEO content.",
-        proj5_tag: "Portfolio Project",
-        proj_aseman_desc: "Showcase corporate interface built to model carpentry and bespoke manufacturing design provisions.",
-        proj_task_desc: "A highly organized architecture dashboard focused on task handling workflows, prioritizing dynamic user adjustments.",
+        proj_saraye_desc: "E-commerce website designed and developed for product distribution and commercial sales platforms",
+        proj_bohlul_desc: "Corporate web representation detailing industrial pump machinery catalogs and utility services",
+        proj_dr_desc: "An e-commerce platform built for pharmaceutical products with structured, automated catalog importing features",
+        proj_mohtava_desc: "Corporate portal highlighting specialized digital marketing frameworks, design portfolios and strategic SEO content",
+        proj_aseman_desc: "Showcase corporate interface built to model carpentry and bespoke manufacturing design provisions",
+        proj_task_desc: "A highly organized architecture dashboard focused on task handling workflows, prioritizing dynamic user adjustments",
         btnVisit: "Visit Website",
-        btnNoLive: "No Live Preview",
         btnSource: "View Source",
         titleEducation: "Education",
         eduDegree: "Bachelor of Computer Engineering",
-        eduUni: "Quchan University of Technology",
-        titleCourses: "Certificates & Courses",
-        courseWp: "Website Design with WordPress",
-        courseWpOrg: "Iran ICDL Foundation",
-        courseAi: "Fundamentals of Artificial Intelligence",
-        footerRights: "All Rights Reserved.",
-        footerBuilt: "Built with HTML5 • CSS3 • Vanilla JavaScript"
+        eduUni: "Quchan University of Technology"
     },
     fa: {
         title: "پردیس نسیمیان | رزومه شخصی",
-        badgeIntern: "آماده برای کارآموزی",
         heroName: "پردیس نسیمیان",
         heroTitle: "دانشجوی مهندسی کامپیوتر",
         heroSubtitle: "Front-End Developer • WordPress Developer",
-        heroDesc: "دانشجوی کارشناسی مهندسی کامپیوتر با تجربه طراحی و توسعه وب‌سایت‌های شرکتی و فروشگاهی در پروژه‌های واقعی. مسلط به WordPress، HTML، CSS و JavaScript و آشنا به PHP. علاقه‌مند به توسعه Front-End، طراحی رابط کاربری و توسعه راهکارهای تحت وب.",
+        heroDesc: "دانشجوی کارشناسی مهندسی کامپیوتر با تجربه طراحی و توسعه وب‌سایت‌های شرکتی و فروشگاهی در پروژه‌های واقعی. مسلط به WordPress، HTML، CSS و JavaScript و آشنا به PHP. علاقه‌مند به توسعه Front-End، طراحی رابط کاربری و توسعه راهکارهای تحت وب",
         titleAbout: "درباره من",
-        aboutText: "دانشجوی مهندسی کامپیوتر با تجربه طراحی و توسعه وب‌سایت‌های شرکتی و فروشگاهی و علاقه‌مند به توسعه Front-End، طراحی رابط کاربری و فناوری‌های وب.",
+        aboutText: "دانشجوی مهندسی کامپیوتر با تجربه طراحی و توسعه وب‌سایت‌های شرکتی و فروشگاهی و علاقه‌مند به توسعه Front-End، طراحی رابط کاربری و فناوری‌های وب",
         titleSkills: "مهارت‌ها",
+        skillPhp: "PHP مقدماتی",
         skillResponsive: "طراحی واکنش‌گرا",
         skillSeo: "سئو مقدماتی",
         skillMarketing: "دیجیتال مارکتینگ مقدماتی",
@@ -73,34 +65,26 @@ const translations = {
         exp1_l2: "طراحی رابط کاربری و صفحات واکنش‌گرا",
         exp1_l3: "آشنایی با SEO پایه و Digital Marketing",
         exp2_date: "خرداد - آبان ۱۴۰۴",
-        exp2_role: "مدرس طراحی سایت با WordPress",
+        exp2_role: "تدریس طراحی سایت با WordPress",
         exp2_company: "آموزشگاه فرهیختگان",
         exp3_date: "خرداد - آبان ۱۴۰۴ / اردیبهشت ۱۴۰۵ - تاکنون",
-        exp3_role: "مدرس ICDL",
+        exp3_role: "تدریس ICDL",
         exp3_company: "آموزشگاه فرهیختگان",
         exp4_date: "خرداد ۱۴۰۵ - تاکنون",
-        exp4_role: "مدرس HTML",
+        exp4_role: "تدریس HTML",
         exp4_company: "آموزشگاه آلتون",
         titleProjects: "پروژه‌ها",
-        proj_saraye_desc: "وب‌سایت فروشگاهی طراحی و پیاده‌سازی شده جهت توزیع کالا و بسترهای مبادلات تجاری فروشگاهی.",
-        proj_bohlul_desc: "پورتال شرکتی معرفی جامع ماشین‌آلات پمپ‌های صنعتی و کاتالوگ‌های کاربری تجهیزات.",
-        proj_dr_desc: "سامانه اطلاعاتی و کاتالوگ دارویی توسعه‌یافته به منظور بررسی و دسترسی به اقلام درمانی.",
-        proj_mohtava_desc: "وب‌سایت معرفی خدمات دیجیتال مارکتینگ، مدیریت محتوای تخصصی و استراتژی‌های بهینه‌سازی وب.",
-        proj5_tag: "پروژه نمونه‌کار",
-        proj_aseman_desc: "طراحی رابط کاربری شرکتی مدلسازی شده جهت ارائه نمونه مصنوعات و صنایع چوب سفارشی.",
-        proj_task_desc: "داشبورد ساختاریافته مدیریت وظایف روزانه متمرکز بر زمان‌بندی پویا و فرآیندهای کاربردی.",
+        proj_saraye_desc: "وب‌سایت فروشگاهی طراحی و پیاده‌سازی شده جهت توزیع کالا و بسترهای مبادلات تجاری فروشگاهی",
+        proj_bohlul_desc: "پورتال شرکتی معرفی جامع ماشین‌آلات پمپ‌های صنعتی و کاتالوگ‌های کاربری تجهیزات",
+        proj_dr_desc: "سایت فروشگاهی اقلام دارویی پیاده‌سازی شده بر پایه درون‌ریزی انبوه و ساختاریافته محصولات",
+        proj_mohtava_desc: "وب‌سایت معرفی خدمات دیجیتال مارکتینگ، مدیریت محتوای تخصصی و استراتژی‌های بهینه‌سازی وب",
+        proj_aseman_desc: "طراحی رابط کاربری شرکتی مدلسازی شده جهت ارائه نمونه مصنوعات و صنایع چوب سفارشی",
+        proj_task_desc: "داشبورد ساختاریافته مدیریت وظایف روزانه متمرکز بر زمان‌بندی پویا و فرآیندهای کاربردی",
         btnVisit: "مشاهده وب‌سایت",
-        btnNoLive: "پیش‌نمایش زنده ندارد",
         btnSource: "مشاهده سورس‌کد",
         titleEducation: "تحصیلات",
         eduDegree: "کارشناسی مهندسی کامپیوتر",
-        eduUni: "دانشگاه صنعتی قوچان",
-        titleCourses: "دوره‌ها و گواهینامه‌ها",
-        courseWp: "طراحی سایت با WordPress",
-        courseWpOrg: "بنیاد ICDL ایران",
-        courseAi: "مبانی هوش مصنوعی",
-        footerRights: "تمامی حقوق محفوظ است.",
-        footerBuilt: "طراحی شده با HTML5 • CSS3 • Vanilla JavaScript"
+        eduUni: "دانشگاه صنعتی قوچان"
     }
 };
 
@@ -157,14 +141,14 @@ function applyLanguage(lang) {
         const dataAttributeKey = element.getAttribute("data-key");
         
         switch (dataAttributeKey) {
-            case "badge-intern":
-                element.textContent = translations[lang].badgeIntern;
-                break;
             case "title-about":
                 element.textContent = translations[lang].titleAbout;
                 break;
             case "title-skills":
                 element.textContent = translations[lang].titleSkills;
+                break;
+            case "skill-php":
+                element.textContent = translations[lang].skillPhp;
                 break;
             case "skill-responsive":
                 element.textContent = translations[lang].skillResponsive;
@@ -238,9 +222,6 @@ function applyLanguage(lang) {
             case "proj-mohtava-desc":
                 element.textContent = translations[lang].proj_mohtava_desc;
                 break;
-            case "proj5-tag":
-                element.textContent = translations[lang].proj5_tag;
-                break;
             case "proj-aseman-desc":
                 element.textContent = translations[lang].proj_aseman_desc;
                 break;
@@ -249,9 +230,6 @@ function applyLanguage(lang) {
                 break;
             case "btn-visit":
                 element.textContent = translations[lang].btnVisit;
-                break;
-            case "btn-no-live":
-                element.textContent = translations[lang].btnNoLive;
                 break;
             case "btn-source":
                 element.textContent = translations[lang].btnSource;
@@ -264,24 +242,6 @@ function applyLanguage(lang) {
                 break;
             case "edu-uni":
                 element.textContent = translations[lang].eduUni;
-                break;
-            case "title-courses":
-                element.textContent = translations[lang].titleCourses;
-                break;
-            case "course-wp":
-                element.textContent = translations[lang].courseWp;
-                break;
-            case "course-wp-org":
-                element.textContent = translations[lang].courseWpOrg;
-                break;
-            case "course-ai":
-                element.textContent = translations[lang].courseAi;
-                break;
-            case "footer-rights":
-                element.textContent = translations[lang].footerRights;
-                break;
-            case "footer-built":
-                element.innerHTML = translations[lang].footerBuilt;
                 break;
         }
     });
