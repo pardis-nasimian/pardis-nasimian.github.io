@@ -75,6 +75,10 @@ html[dir="ltr"] body { text-align: left; }
     box-shadow: var(--shadow-sm);
     transition: var(--transition-smooth);
 }
+html[dir="rtl"] .lang-btn {
+    right: auto;
+    left: 24px;
+}
 .lang-btn:hover {
     background: #1E293B;
     border-color: var(--primary);
@@ -95,8 +99,6 @@ html[dir="ltr"] body { text-align: left; }
     align-items: center;
     gap: 32px;
 }
-html[dir="rtl"] .hero-top-row { flex-direction: row; }
-html[dir="ltr"] .hero-top-row { flex-direction: row; }
 
 .profile-wrapper {
     position: relative;
@@ -165,13 +167,6 @@ html[dir="ltr"] .hero-meta { text-align: left; }
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.hero-desc {
-    max-width: 850px;
-    color: #E2E8F0; /* Clean comfortable read contrast text */
-    font-size: 1.1rem;
-    text-align: justify;
 }
 
 .social-links {
@@ -249,7 +244,7 @@ html[dir="ltr"] .hero-meta { text-align: left; }
     height: 100%;
 }
 
-/* --- SKILLS --- */
+/* --- SKILLS & BADGES --- */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -307,7 +302,7 @@ html[dir="ltr"] .hero-meta { text-align: left; }
 
 .exp-list {
     margin-top: auto;
-    padding: 0 16px;
+    padding: 0 20px;
     color: var(--text-muted);
     font-size: 0.95rem;
 }
@@ -420,15 +415,58 @@ html[dir="ltr"] .hero-meta { text-align: left; }
     }
 }
 
-@media (max-width: 600px) {
-    .hero-top-row {
-        flex-direction: column;
-        text-align: center;
-        gap: 16px;
+@media (max-width: 768px) {
+    .container {
+        padding: 24px 16px;
     }
+
+    .lang-btn {
+        top: 16px;
+        right: 16px;
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    html[dir="rtl"] .lang-btn {
+        right: auto;
+        left: 16px;
+    }
+
+    .hero {
+        padding: 40px 0 20px 0;
+    }
+
+    /* ترتیب موبایل: عکس بالا، متون در زیر به صورت کاملاً منظم و مرکزچین */
+    .hero-top-row {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .profile-wrapper {
+        margin: 0 auto;
+    }
+
+    .hero-meta {
+        align-items: center !important;
+    }
+
     html[dir="rtl"] .hero-meta, html[dir="ltr"] .hero-meta {
         text-align: center;
     }
-    .hero-name { font-size: 2rem; }
-    .social-links { justify-content: center; }
+
+    .hero-name { 
+        font-size: 2rem; 
+    }
+    
+    .hero-title {
+        font-size: 1.15rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .social-links { 
+        justify-content: center; 
+    }
 }
