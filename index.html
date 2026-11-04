@@ -1,258 +1,869 @@
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pardis Nasimian</title>
-    
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <!-- Main Style Sheet -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رزومه پردیس نسیمیان | Front-End Intern</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --primary-light: #ccfbf1;
+      --text: #24313b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --background: #f1f5f9;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Vazirmatn", sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.9;
+      font-size: 13px;
+      padding: 30px 15px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .resume {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      direction: rtl;
+      box-shadow: 0 10px 40px rgba(15, 23, 42, 0.10);
+      overflow: hidden;
+    }
+
+    .main {
+      padding: 35px 32px;
+      min-width: 0;
+    }
+
+    .sidebar {
+      background: #f8fafc;
+      border-right: 1px solid var(--border);
+      padding: 32px 22px;
+      min-width: 0;
+    }
+
+    /* Header */
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding-bottom: 24px;
+      margin-bottom: 25px;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    .profile-photo {
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 4px solid var(--primary-light);
+      background: #e2e8f0;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .header-info h1 {
+      font-size: 27px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    .job-title {
+      color: var(--primary);
+      font-size: 15px;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .header-subtitle {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    /* Sections */
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 13px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 5px;
+      height: 20px;
+      background: var(--primary);
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .section p {
+      text-align: justify;
+      color: #475569;
+      font-size: 12.5px;
+    }
+
+    /* Experience */
+
+    .experience-item {
+      margin-bottom: 19px;
+      padding-right: 14px;
+      border-right: 2px solid #cbd5e1;
+      position: relative;
+    }
+
+    .experience-item::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      position: absolute;
+      right: -5px;
+      top: 8px;
+    }
+
+    .item-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .item-heading h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .company {
+      color: var(--primary);
+      font-size: 11.5px;
+      font-weight: 600;
+      margin: 2px 0 5px;
+    }
+
+    .experience-item ul {
+      padding-right: 16px;
+      color: #475569;
+      font-size: 11.5px;
+    }
+
+    .experience-item li {
+      margin-bottom: 2px;
+    }
+
+    /* Projects */
+
+    .project {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      margin-bottom: 11px;
+      page-break-inside: avoid;
+    }
+
+    .project h3 {
+      font-size: 13px;
+      color: #1e293b;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .project p {
+      font-size: 11.5px;
+      color: #64748b;
+      margin-bottom: 7px;
+      text-align: right;
+    }
+
+    .project-link {
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 7px;
+    }
+
+    .tech {
+      background: #ecfdf5;
+      color: #0f766e;
+      border: 1px solid #ccfbf1;
+      padding: 2px 8px;
+      border-radius: 5px;
+      font-size: 10px;
+      direction: ltr;
+    }
+
+    /* Sidebar */
+
+    .side-section {
+      margin-bottom: 24px;
+    }
+
+    .side-title {
+      color: var(--primary-dark);
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 11px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid #cbd5e1;
+    }
+
+    .contact-item {
+      margin-bottom: 11px;
+      font-size: 11.5px;
+      color: #475569;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-label {
+      display: block;
+      color: #94a3b8;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .contact-value {
+      direction: ltr;
+      display: inline-block;
+      text-align: left;
+      color: #334155;
+      font-weight: 500;
+    }
+
+    .contact-value.rtl {
+      direction: rtl;
+      text-align: right;
+    }
+
+    /* Skills */
+
+    .skill-item {
+      margin-bottom: 13px;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 5px;
+    }
+
+    .skill-name {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .skill-level {
+      font-size: 10px;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      border-radius: 5px;
+      padding: 1px 7px;
+      white-space: nowrap;
+    }
+
+    .skill-bar {
+      height: 5px;
+      background: #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 10px;
+    }
+
+    .education-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .education-detail {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    .simple-list {
+      padding-right: 16px;
+      color: #475569;
+      font-size: 11.5px;
+    }
+
+    .simple-list li {
+      margin-bottom: 5px;
+    }
+
+    .language-level {
+      font-size: 11.5px;
+      color: #475569;
+    }
+
+    .footer {
+      margin-top: 25px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      color: #94a3b8;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    /* Responsive */
+
+    @media screen and (max-width: 850px) {
+      body {
+        padding: 0;
+      }
+
+      .resume {
+        width: 100%;
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        border-right: none;
+        border-top: 1px solid var(--border);
+      }
+    }
+
+    /* Print */
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      body {
+        background: white;
+        padding: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .resume {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        box-shadow: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .project,
+      .experience-item,
+      .side-section {
+        break-inside: avoid;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- Language Switcher (Fixed Position - Untouched) -->
-    <button id="lang-btn" class="lang-btn" aria-label="Toggle Language">FA</button>
+<div class="resume">
 
-    <!-- MAIN CONTAINER -->
-    <main class="container">
-        
-        <!-- HERO SECTION -->
-        <section class="hero fade-in-section">
-            <div class="hero-top-row">
-                <div class="profile-wrapper">
-                    <img src="assets/profile.jpg" alt="Pardis Nasimian" class="profile-img" loading="lazy">
-                    <span class="badge badge-internship" data-key="badge-work">Open to work</span>
-                </div>
-                <div class="hero-meta">
-                    <h1 class="hero-name" data-key="hero-name">Pardis Nasimian</h1>
-                    <h2 class="hero-title" data-key="hero-title">WordPress Developer • Front-End Developer</h2>
-                    <h3 class="hero-subtitle" data-key="hero-subtitle">Computer Engineering Student</h3>
-                </div>
-            </div>
-            
-            <div class="hero-bottom-content">
-                <div class="social-links">
-                    <a href="tel:09057826774" class="social-icon" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
-                    <a href="mailto:pardis.nasim1381@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://github.com/pardis-nasimian" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://linkedin.com/in/pardis-nasimian" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="assets/pdf/my-resume.pdf" download class="social-icon" aria-label="Resume" title="Download Resume"><i class="fa-solid fa-file-pdf"></i></a>
-                </div>
-            </div>
-        </section>
+  <!-- Main Content -->
+  <main class="main">
 
-        <!-- TWO COLUMN ROW: ABOUT & SKILLS -->
-        <section class="split-row fade-in-section">
-            <div class="split-col">
-                <h2 class="section-title" data-key="title-about">About Me</h2>
-                <div class="glass-card about-card">
-                    <p data-key="about-text">
-                        Front-End developer with practical experience in designing corporate and e-commerce websites using WordPress, HTML, CSS and JavaScript. Interested in responsive web design, user experience, and building clean, maintainable interfaces
-                    </p>
-                </div>
-            </div>
-            <div class="split-col">
-                <h2 class="section-title" data-key="title-skills">Skills</h2>
-                <div class="skills-grid">
-                    <span class="skill-badge">HTML5</span>
-                    <span class="skill-badge">CSS3</span>
-                    <span class="skill-badge">JavaScript</span>
-                    <span class="skill-badge">WordPress</span>
-                    <span class="skill-badge" data-key="skill-responsive">Responsive Design</span>
-                    <span class="skill-badge">UI/UX</span>
-                    <span class="skill-badge" data-key="skill-php">PHP (Basic)</span>
-                </div>
-            </div>
-        </section>
+    <!-- Header -->
+    <header class="header">
 
-        <!-- ADDITIONAL KNOWLEDGE SECTION -->
-        <section class="section fade-in-section">
-            <h2 class="section-title" data-key="title-additional">Additional Knowledge</h2>
-            <div class="skills-grid">
-                <span class="skill-badge" data-key="add-seo">SEO Basics</span>
-                <span class="skill-badge" data-key="add-marketing">Digital Marketing Basics</span>
-                <span class="skill-badge" data-key="add-team">Team Collaboration</span>
-                <span class="skill-badge" data-key="add-problem">Problem Solving</span>
-            </div>
-        </section>
+      <div class="profile-photo">
+        <img src="asset/profile.jpg" alt="عکس پردیس نسیمیان">
+      </div>
 
-        <!-- EXPERIENCE SECTION -->
-        <section class="section fade-in-section">
-            <h2 class="section-title" data-key="title-experience">Experience</h2>
-            <div class="experience-grid">
-                <div class="glass-card experience-card">
-                    <span class="date-tag" data-key="exp1-date">May 2022 - Present</span>
-                    <h3 class="card-title" data-key="exp1-role">Web Designer</h3>
-                    <h4 class="card-subtitle" data-key="exp1-company">Mohtavazoom Team</h4>
-                    <ul class="exp-list">
-                        <li data-key="exp1-l1">Developed responsive WordPress websites for business clients</li>
-                        <li data-key="exp1-l2">Improved website performance and user experience</li>
-                    </ul>
-                </div>
-                <div class="glass-card experience-card">
-                    <span class="date-tag" data-key="exp2-date">June - November 2025</span>
-                    <h3 class="card-title" data-key="exp2-role">WordPress Instruction</h3>
-                    <h4 class="card-subtitle" data-key="exp2-company">Farhikhtegan Institute</h4>
-                    <ul class="exp-list">
-                        <li data-key="exp2-l1">Taught WordPress website creation, theme customization and WooCommerce basics</li>
-                        <li data-key="exp2-l2">Guided learners through building complete websites</li>
-                    </ul>
-                </div>
-                <div class="glass-card experience-card">
-                    <span class="date-tag" data-key="exp3-date">June - Nov 2025 / May 2026 - Present</span>
-                    <h3 class="card-title" data-key="exp3-role">ICDL Instruction</h3>
-                    <h4 class="card-subtitle" data-key="exp3-company">Farhikhtegan Institute</h4>
-                    <ul class="exp-list">
-                        <li data-key="exp3-l1">Taught essential computer skills and Microsoft Office applications</li>
-                        <li data-key="exp3-l2">Prepared practical exercises for learners</li>
-                    </ul>
-                </div>
-                <div class="glass-card experience-card">
-                    <span class="date-tag" data-key="exp4-date">June 2026 - Present</span>
-                    <h3 class="card-title" data-key="exp4-role">HTML Instruction</h3>
-                    <h4 class="card-subtitle" data-key="exp4-company">Alton Institute</h4>
-                    <ul class="exp-list">
-                        <li data-key="exp4-l1">Introduced HTML fundamentals, semantic structure and web page layout</li>
-                        <li data-key="exp4-l2">Helped students build their first responsive web pages</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+      <div class="header-info">
+        <h1>پردیس نسیمیان</h1>
+        <div class="job-title">
+          کارآموز توسعه فرانت‌اند | Front-End Intern
+        </div>
+        <div class="header-subtitle">
+          دانشجوی مهندسی کامپیوتر | علاقه‌مند به توسعه وب
+        </div>
+      </div>
 
-        <!-- PROJECTS SECTION -->
-        <section class="section fade-in-section">
-            <h2 class="section-title" data-key="title-projects">Projects</h2>
-            <div class="projects-grid">
-                <!-- 1. Saraye Hashemi -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fa-brands fa-wordpress"></i></div>
-                        <div>
-                            <h3 class="card-title">Saraye Hashemi</h3>
-                            <span class="tech-tag">WordPress / WooCommerce</span>
-                        </div>
-                    </div>
-                    <p class="project-desc" data-key="proj-saraye-desc">E-commerce website developed with WordPress and WooCommerce</p>
-                    <a href="https://sarayehashemi.com" target="_blank" rel="noopener noreferrer" class="btn" data-key="btn-visit">Visit Website</a>
-                </div>
+    </header>
 
-                <!-- 2. Pipe Iran -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fa-brands fa-wordpress"></i></div>
-                        <div>
-                            <h3 class="card-title">Pipe Iran</h3>
-                            <span class="tech-tag" data-key="proj-pipe-tech">WordPress / HTML / CSS / JavaScript / PHP</span>
-                        </div>
-                    </div>
-                    <p class="project-desc" data-key="proj-pipe-desc">WordPress Theme Enhancement and Optimization for an Industrial and Kitchen Equipment E-commerce Website</p>
-                    <a href="https://pipe-iran.com/" target="_blank" rel="noopener noreferrer" class="btn" data-key="btn-visit">Visit Website</a>
-                </div>
+    <!-- About -->
+    <section class="section">
+      <h2 class="section-title">درباره من</h2>
 
-                <!-- 3. cinateb -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fa-brands fa-wordpress"></i></div>
-                        <div>
-                            <h3 class="card-title">Cinateb</h3>
-                            <span class="tech-tag" data-key="proj-sina-tech">WordPress / HTML / CSS / JavaScript / PHP</span>
-                        </div>
-                    </div>
-                    <p class="project-desc" data-key="proj-sina-desc">Custom WordPress Theme Development for a Medical Equipment E-commerce Website</p>
-                    <a href="https://cinateb.com/" target="_blank" rel="noopener noreferrer" class="btn" data-key="btn-visit">Visit Website</a>
-                </div>
+      <p>
+        دانشجوی مهندسی کامپیوتر با حدود ۴ سال تجربه در طراحی و پیاده‌سازی
+        وب‌سایت و فعالیت در حوزه وردپرس. مسلط به HTML و CSS و دارای تجربه
+        عملی در طراحی صفحات واکنش‌گرا و پیاده‌سازی رابط کاربری.
+        همچنین تجربه تدریس HTML، CSS و وردپرس را دارم و در حال توسعه
+        مهارت‌های خود در JavaScript و برنامه‌نویسی فرانت‌اند هستم.
+        علاقه‌مند به یادگیری مستمر، کار تیمی و مشارکت در توسعه محصولات وب.
+      </p>
+    </section>
 
-                <!-- 4. Task Manager -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fa-solid fa-code"></i></div>
-                        <div>
-                            <h3 class="card-title">Task Manager</h3>
-                            <span class="tech-tag">HTML / CSS / JavaScript</span>
-                        </div>
-                    </div>
-                    <p class="project-desc" data-key="proj-task-desc">Task management application built with HTML, CSS and JavaScript</p>
-                    <a href="https://github.com/pardis-nasimian" target="_blank" rel="noopener noreferrer" class="btn" data-key="btn-source">View Source</a>
-                </div>
+    <!-- Work Experience -->
+    <section class="section">
+      <h2 class="section-title">سوابق کاری</h2>
 
-                <!-- 5. Dr. Esmailzadeh Pharmacy -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fa-brands fa-wordpress"></i></div>
-                        <div>
-                            <h3 class="card-title">Dr. Esmailzadeh Pharmacy</h3>
-                            <span class="tech-tag">WordPress / WooCommerce</span>
-                        </div>
-                    </div>
-                    <p class="project-desc" data-key="proj-dr-desc">Online pharmacy website with WooCommerce product management</p>
-                    <a href="https://draegs.ir" target="_blank" rel="noopener noreferrer" class="btn" data-key="btn-visit">Visit Website</a>
-                </div>
+      <div class="experience-item">
+        <div class="item-heading">
+          <h3>طراح و پیاده‌ساز وب‌سایت</h3>
+          <span class="date">اردیبهشت ۱۴۰۱ – مرداد ۱۴۰۵</span>
+        </div>
 
-                <!-- 6. Bohlul Pump -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fa-brands fa-wordpress"></i></div>
-                        <div>
-                            <h3 class="card-title">Bohlul Pump</h3>
-                            <span class="tech-tag">WordPress / Elementor</span>
-                        </div>
-                    </div>
-                    <p class="project-desc" data-key="proj-bohlul-desc">Corporate website designed to present industrial products and services</p>
-                    <a href="https://bohlulpump.com" target="_blank" rel="noopener noreferrer" class="btn" data-key="btn-visit">Visit Website</a>
-                </div>
+        <div class="company">مجموعه محتوازوم</div>
 
-                <!-- 7. Aseman Choob -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fa-brands fa-wordpress"></i></div>
-                        <div>
-                            <h3 class="card-title">Aseman Choob</h3>
-                            <span class="tech-tag">WordPress / HTML / CSS / JavaScript</span>
-                        </div>
-                    </div>
-                    <p class="project-desc" data-key="proj-aseman-desc">Corporate website developed for a woodworking company</p>
-                    <a href="https://asemanchoob.ir" target="_blank" rel="noopener noreferrer" class="btn" data-key="btn-visit">Visit Website</a>
-                </div>
+        <ul>
+          <li>طراحی و پیاده‌سازی وب‌سایت‌های شرکتی و فروشگاهی با وردپرس</li>
+          <li>ساخت و شخصی‌سازی صفحات با Elementor و قالب‌های وردپرسی</li>
+          <li>پیاده‌سازی تغییرات ظاهری با HTML و CSS</li>
+          <li>بهینه‌سازی نمایش صفحات در موبایل و تبلت</li>
+          <li>نصب، پیکربندی و مدیریت افزونه‌های کاربردی وردپرس</li>
+          <li>رفع مشکلات فنی و بهبود عملکرد وب‌سایت‌ها</li>
+        </ul>
+      </div>
 
-                <!-- 8. Mohtavazoom -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fa-brands fa-wordpress"></i></div>
-                        <div>
-                            <h3 class="card-title">Mohtavazoom</h3>
-                            <span class="tech-tag">WordPress / HTML / CSS / JavaScript</span>
-                        </div>
-                    </div>
-                    <p class="project-desc" data-key="proj-mohtava-desc">Company website showcasing digital marketing services and portfolio</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn" data-key="btn-visit">Visit Website</a>
-                </div>
-            </div>
-        </section>
+    </section>
 
-        <!-- EDUCATION SECTION -->
-        <section class="section fade-in-section">
-            <h2 class="section-title" data-key="title-education">Education</h2>
-            <div class="glass-card item-card">
-                <div class="card-flex">
-                    <div>
-                        <h3 class="card-title" data-key="edu-degree">B.Sc. Computer Engineering</h3>
-                        <h4 class="card-subtitle" data-key="edu-uni">Quchan University of Technology</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-    </main>
+    <!-- Teaching Experience -->
+    <section class="section">
+      <h2 class="section-title">سوابق تدریس</h2>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>&copy;2026 Pardis Nasimian</p>
-    </footer>
+      <div class="experience-item">
+        <div class="item-heading">
+          <h3>مدرس وردپرس</h3>
+          <span class="date">تیر ۱۴۰۵ – شهریور ۱۴۰۵</span>
+        </div>
+        <div class="company">آموزشگاه آلتون</div>
+        <ul>
+          <li>آموزش راه‌اندازی و مدیریت وب‌سایت با وردپرس</li>
+          <li>آموزش کار با قالب‌ها، افزونه‌ها و صفحه‌ساز Elementor</li>
+          <li>اجرای تمرین‌های عملی طراحی وب‌سایت</li>
+        </ul>
+      </div>
 
-    <!-- Core Script -->
-    <script src="script.js"></script>
+      <div class="experience-item">
+        <div class="item-heading">
+          <h3>مدرس HTML و CSS</h3>
+          <span class="date">خرداد ۱۴۰۵ – مرداد ۱۴۰۵</span>
+        </div>
+        <div class="company">آموزشگاه آلتون</div>
+        <ul>
+          <li>آموزش ساختار صفحات وب با HTML</li>
+          <li>آموزش استایل‌دهی و طراحی صفحات با CSS</li>
+          <li>پیاده‌سازی تمرین‌های عملی طراحی وب</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="item-heading">
+          <h3>مدرس وردپرس</h3>
+          <span class="date">خرداد ۱۴۰۴ – آبان ۱۴۰۴</span>
+        </div>
+        <div class="company">آموزشگاه فرهیختگان</div>
+        <ul>
+          <li>آموزش مبانی طراحی و راه‌اندازی وب‌سایت با وردپرس</li>
+          <li>آموزش مدیریت محتوای سایت و کار با ابزارهای وردپرس</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="item-heading">
+          <h3>مدرس ICDL</h3>
+          <span class="date">اردیبهشت ۱۴۰۵ – تیر ۱۴۰۵</span>
+        </div>
+        <div class="company">آموزشگاه فرهیختگان | بزرگسالان</div>
+        <ul>
+          <li>آموزش مهارت‌های عمومی کامپیوتر و نرم‌افزارهای Office</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="item-heading">
+          <h3>مدرس ICDL و مهارت‌های کامپیوتر</h3>
+          <span class="date">خرداد ۱۴۰۴ – آبان ۱۴۰۴</span>
+        </div>
+        <div class="company">آموزشگاه فرهیختگان | کودکان</div>
+        <ul>
+          <li>آموزش مبانی کامپیوتر و مهارت‌های پایه کار با نرم‌افزارها</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Projects -->
+    <section class="section">
+      <h2 class="section-title">نمونه‌کارها و پروژه‌ها</h2>
+
+      <div class="project">
+        <h3>Task Manager | برنامه مدیریت وظایف</h3>
+        <p>
+          طراحی و پیاده‌سازی یک برنامه تحت وب برای مدیریت وظایف
+          با استفاده از JavaScript
+        </p>
+        <div class="tech-list">
+          <span class="tech">HTML5</span>
+          <span class="tech">CSS3</span>
+          <span class="tech">JavaScript</span>
+        </div>
+        <a class="project-link"
+           href="https://github.com/pardis-nasimian/task-manager-web-app.git"
+           target="_blank" rel="noopener">
+          مشاهده کد پروژه در GitHub
+        </a>
+      </div>
+
+      <div class="project">
+        <h3>سیناطب | Cinateb</h3>
+        <p>
+          توسعه قالب وردپرس وب‌سایت فروش تجهیزات پزشکی
+        </p>
+        <div class="tech-list">
+          <span class="tech">WordPress</span>
+          <span class="tech">HTML</span>
+          <span class="tech">CSS</span>
+          <span class="tech">JavaScript</span>
+          <span class="tech">PHP</span>
+        </div>
+        <a class="project-link" href="https://cinateb.com/"
+           target="_blank" rel="noopener">
+          مشاهده وب‌سایت
+        </a>
+      </div>
+
+      <div class="project">
+        <h3>پایپ ایران | Pipe Iran</h3>
+        <p>
+          بروزرسانی و بهبود قالب وردپرس وب‌سایت فروش تجهیزات صنعتی
+          و آشپزخانه
+        </p>
+        <div class="tech-list">
+          <span class="tech">WordPress</span>
+          <span class="tech">HTML</span>
+          <span class="tech">CSS</span>
+          <span class="tech">JavaScript</span>
+          <span class="tech">PHP</span>
+        </div>
+        <a class="project-link" href="https://pipe-iran.com/"
+           target="_blank" rel="noopener">
+          مشاهده وب‌سایت
+        </a>
+      </div>
+
+      <div class="project">
+        <h3>سرای هاشمی</h3>
+        <p>
+          طراحی و پیاده‌سازی وب‌سایت فروشگاهی لوازم آشپزخانه،
+          بلور و دکوراسیون
+        </p>
+        <div class="tech-list">
+          <span class="tech">WordPress</span>
+          <span class="tech">WooCommerce</span>
+          <span class="tech">Elementor</span>
+          <span class="tech">CSS</span>
+        </div>
+        <a class="project-link" href="https://sarayehashemi.com/"
+           target="_blank" rel="noopener">
+          مشاهده وب‌سایت
+        </a>
+      </div>
+
+      <div class="project">
+        <h3>پمپ بهلول | Bohlul Pump</h3>
+        <p>
+          طراحی و پیاده‌سازی وب‌سایت شرکتی در حوزه تجهیزات و پمپ صنعتی
+        </p>
+        <div class="tech-list">
+          <span class="tech">WordPress</span>
+          <span class="tech">Elementor</span>
+          <span class="tech">HTML</span>
+          <span class="tech">CSS</span>
+        </div>
+        <a class="project-link" href="https://bohlulpump.com/"
+           target="_blank" rel="noopener">
+          مشاهده وب‌سایت
+        </a>
+      </div>
+
+      <div class="project">
+        <h3>KHPICO</h3>
+        <p>
+          طراحی و پیاده‌سازی صفحات وب‌سایت شرکتی
+        </p>
+        <div class="tech-list">
+          <span class="tech">WordPress</span>
+          <span class="tech">HTML</span>
+          <span class="tech">CSS</span>
+        </div>
+        <a class="project-link" href="https://khpico.com/"
+           target="_blank" rel="noopener">
+          مشاهده وب‌سایت
+        </a>
+      </div>
+
+    </section>
+
+    <div class="footer">
+      پردیس نسیمیان | رزومه کارآموز توسعه فرانت‌اند
+    </div>
+
+  </main>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Contact -->
+    <section class="side-section">
+      <h2 class="side-title">اطلاعات تماس</h2>
+
+      <div class="contact-item">
+        <span class="contact-label">شماره تماس</span>
+        <a class="contact-value" href="tel:09154831577">
+          09154831577
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-label">ایمیل</span>
+        <a class="contact-value" href="mailto:pardis.nasim1381@gmail.com">
+          pardis.nasim1381@gmail.com
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-label">موقعیت مکانی</span>
+        <span class="contact-value rtl">قوچان – مشهد</span>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-label">GitHub</span>
+        <a class="contact-value"
+           href="https://github.com/pardis-nasimian"
+           target="_blank" rel="noopener">
+          github.com/pardis-nasimian
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-label">LinkedIn</span>
+        <a class="contact-value"
+           href="https://linkedin.com/in/pardis-nasimian"
+           target="_blank" rel="noopener">
+          linkedin.com/in/pardis-nasimian
+        </a>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="side-section">
+      <h2 class="side-title">مهارت‌های تخصصی</h2>
+
+      <div class="skill-item">
+        <div class="skill-info">
+          <span class="skill-name">HTML5</span>
+          <span class="skill-level">پیشرفته</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 95%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-info">
+          <span class="skill-name">CSS3</span>
+          <span class="skill-level">پیشرفته</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 85%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-info">
+          <span class="skill-name">Responsive Design</span>
+          <span class="skill-level">پیشرفته</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 85%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-info">
+          <span class="skill-name">WordPress</span>
+          <span class="skill-level">پیشرفته</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 95%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-info">
+          <span class="skill-name">Elementor</span>
+          <span class="skill-level">پیشرفته</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 90%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-info">
+          <span class="skill-name">JavaScript</span>
+          <span class="skill-level">مقدماتی</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 25%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-info">
+          <span class="skill-name">PHP</span>
+          <span class="skill-level">مقدماتی</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 30%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-info">
+          <span class="skill-name">Git / GitHub</span>
+          <span class="skill-level">مقدماتی</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 40%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-info">
+          <span class="skill-name">WooCommerce</span>
+          <span class="skill-level">پیشرفته</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 85%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-info">
+          <span class="skill-name">UI Design</span>
+          <span class="skill-level">متوسط</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 55%"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Additional Skills -->
+    <section class="side-section">
+      <h2 class="side-title">دانش تکمیلی</h2>
+      <ul class="simple-list">
+        <li>آشنایی با اصول طراحی رابط کاربری</li>
+        <li>آشنایی با اصول طراحی واکنش‌گرا</li>
+        <li>آشنایی با مفاهیم اولیه سئو</li>
+        <li>کار با افزونه‌ها و قالب‌های وردپرس</li>
+        <li>آشنایی با VS Code</li>
+        <li>آشنایی با Photoshop</li>
+      </ul>
+    </section>
+
+    <!-- Education -->
+    <section class="side-section">
+      <h2 class="side-title">تحصیلات</h2>
+
+      <div class="education-title">
+        کارشناسی مهندسی کامپیوتر
+      </div>
+
+      <div class="education-detail">
+        دانشگاه صنعتی قوچان
+        <br>
+        در حال تحصیل
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="side-section">
+      <h2 class="side-title">زبان</h2>
+
+      <div class="language-level">
+        زبان انگلیسی: پیشرفته
+      </div>
+    </section>
+
+  </aside>
+
+</div>
+
 </body>
 </html>
